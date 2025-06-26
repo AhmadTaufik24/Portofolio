@@ -172,3 +172,11 @@ html, body {
     from, to { border-color: transparent }
     50% { border-color: currentColor }
 }
+
+/* Sembunyikan banner translate di atas halaman */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
