@@ -80,90 +80,96 @@
   </header>
 
 <main>
-    <section id="home" class="min-h-screen flex items-start pt-16 pb-6 sm:pt-20 sm:pb-8 md:pt-24 md:pb-10 lg:pt-28 lg:pb-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="animasi animasi-fade-up"> 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                
-                <!-- Foto Profil -->
-                <div class="text-center md:text-left">
-                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071" alt="Foto Taufik" 
-                         class="w-full max-w-xs mx-auto sm:max-w-sm lg:max-w-md rounded-lg shadow-2xl object-cover filter drop-shadow-xl">
-                </div>
+   <!-- SECTION HOME -->
+<section id="home" class="pt-20 pb-12 sm:pt-24 md:pt-28 lg:pt-32">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="animasi animasi-fade-up"> 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-                <!-- Teks Profil -->
-                <div class="text-center md:text-left">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight">
-                        Hi, I’m Taufik – I build 
-                        <span class="text-blue-600 dark:text-blue-400" id="typed-text"></span>
-                        <span class="cursor">|</span>
-                    </h1>
-                    <p class="mt-6 text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-xl mx-auto md:mx-0">
-                        A creative professional specializing in UI/UX design and branding, focused on creating user-centric products with a clean and modern aesthetic.
-                    </p>
-                    
-                    <!-- Tombol Aksi -->
-                    <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4">
-                        <a href="work.html" 
-                           class="w-full sm:w-auto bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition-all duration-300">
-                            View My Work
-                        </a>
-                        <a href="contact.html" 
-                           class="w-full sm:w-auto bg-gray-200 dark:bg-gray-700 text-brand-text-light dark:text-brand-text-dark px-8 py-3 rounded-md font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
-                            Contact Me
-                        </a>
-                    </div>
-
-                </div>
-            </div>
+        <!-- Foto Profil -->
+        <div class="text-center md:text-left">
+          <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071" alt="Foto Taufik" 
+               class="w-full max-w-xs mx-auto sm:max-w-sm lg:max-w-md rounded-lg shadow-2xl object-cover filter drop-shadow-xl">
         </div>
+
+        <!-- Teks Profil -->
+        <div class="text-center md:text-left">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight">
+            Hi, I’m Taufik – I build 
+            <span class="text-blue-600 dark:text-blue-400" id="typed-text"></span>
+            <span class="cursor">|</span>
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-xl mx-auto md:mx-0">
+            A creative professional specializing in UI/UX design and branding, focused on creating user-centric products with a clean and modern aesthetic.
+          </p>
+          
+          <!-- Tombol Aksi -->
+          <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4">
+            <a href="work.html" 
+               class="w-full sm:w-auto bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition-all duration-300">
+              View My Work
+            </a>
+            <a href="contact.html" 
+               class="w-full sm:w-auto bg-gray-200 dark:bg-gray-700 text-brand-text-light dark:text-brand-text-dark px-8 py-3 rounded-md font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">
+              Contact Me
+            </a>
+          </div>
+
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
+<!-- SECTION WORK -->
+<section id="work" class="pt-12 pb-20 sm:pt-16 sm:pb-24 md:pt-20 md:pb-28">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="animasi animasi-fade-right"> 
 
-<section id="work" class="py-20 sm:py-32">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="animasi animasi-fade-right"> 
-            
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Selected Work</h2>
-                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">A collection of projects I'm passionate about.</p>
+      <!-- Judul -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Selected Work</h2>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">A collection of projects I'm passionate about.</p>
+      </div>
+
+      <!-- Grid Project -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        
+        <a href="project-1.html" class="group block rounded-lg">
+          <div class="relative h-96 overflow-hidden rounded-lg shadow-lg">
+            <img src="https://images.unsplash.com/photo-1555774698-0b77e0abfe3d?q=80&w=2070" alt="Project 1" 
+                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
+              <h3 class="text-2xl font-bold">Project Name One</h3>
+              <p class="text-sm opacity-90">UI/UX Design, Branding</p>
             </div>
+          </div>
+        </a>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                
-                <a href="project-1.html" class="group block rounded-lg">
-                    <div class="relative h-96 overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0abfe3d?q=80&w=2070" alt="Project 1" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
-                            <h3 class="text-2xl font-bold">Project Name One</h3>
-                            <p class="text-sm opacity-90">UI/UX Design, Branding</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="project-2.html" class="group block rounded-lg">
-                     <div class="relative h-96 overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1576153139958-b695143527de?q=80&w=1974" alt="Project 2" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
-                            <h3 class="text-2xl font-bold">Project Name Two</h3>
-                            <p class="text-sm opacity-90">Creative Strategy</p>
-                        </div>
-                    </div>
-                </a>
-
+        <a href="project-2.html" class="group block rounded-lg">
+          <div class="relative h-96 overflow-hidden rounded-lg shadow-lg">
+            <img src="https://images.unsplash.com/photo-1576153139958-b695143527de?q=80&w=1974" alt="Project 2" 
+                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
+              <h3 class="text-2xl font-bold">Project Name Two</h3>
+              <p class="text-sm opacity-90">Creative Strategy</p>
             </div>
+          </div>
+        </a>
 
-            <div class="text-center mt-16">
-                <a href="work.html" class="inline-block bg-transparent border border-gray-400 dark:border-gray-600 px-8 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                    View All Projects
-                </a>
-            </div>
+      </div>
 
-        </div>
+      <!-- Tombol Lihat Semua -->
+      <div class="text-center mt-16">
+        <a href="work.html" class="inline-block bg-transparent border border-gray-400 dark:border-gray-600 px-8 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          View All Projects
+        </a>
+      </div>
+
     </div>
+  </div>
 </section>
 
 <section id="about" class="py-20 sm:py-32 bg-brand-gray dark:bg-gray-900/50">
