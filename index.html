@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taufik - Digital Experience Designer</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#111111',
+                        'brand-light': '#ffffff',
+                        'brand-gray': '#f3f4f6',
+                        'brand-text-dark': '#e5e7eb',
+                        'brand-text-light': '#1f2937',
+                    }
+                }
+            }
+        }
+    </script>
+
+    
+</head>
+<body class="bg-brand-light dark:bg-brand-dark text-brand-text-light dark:text-brand-text-dark transition-colors duration-300">
+
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-brand-light dark:bg-brand-dark md:bg-white/80 md:dark:bg-brand-dark/80 md:backdrop-blur-sm transition-colors duration-300">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div>
+                <a href="index.html" class="text-2xl font-bold tracking-tighter md:hidden">TAUFIK</a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+                    <a href="work.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Work</a>
+                    <a href="about.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+                    <a href="services.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Services</a>
+                    <a href="journal.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Journal</a>
+                    <a href="contact.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+                </nav>
+            </div>
+            <div class="flex items-center">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-15.66l-.707.707M5.05 18.95l-.707.707M21 12h-1M4 12H3m15.66 8.66l-.707-.707M5.05 5.05l-.707-.707"></path></svg>
+                </button>
+                <div class="md:hidden ml-2">
+                    <button id="mobile-menu-button" class="p-2 rounded-md">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-brand-light dark:bg-brand-dark pb-4">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-gray dark:bg-gray-900/50 rounded-lg shadow-lg py-2">
+                 <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Home</a>
+                 <a href="work.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Work</a>
+                 <a href="about.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">About</a>
+                 <a href="services.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Services</a>
+                 <a href="journal.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Journal</a>
+                 <a href="contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="home" class="min-h-screen flex items-center pt-24 pb-12 lg:pt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+           <div class="animasi animasi-fade-up"> 
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left">
+                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071" alt="Foto Taufik" class="w-full max-w-xs mx-auto sm:max-w-sm lg:max-w-md rounded-lg shadow-2xl object-cover filter drop-shadow-xl">
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight">
+    Hi, I’m Taufik – I build <span class="text-blue-600 dark:text-blue-400" id="typed-text"></span><span class="cursor">|</span>
+</h1>
+                        <p class="mt-6 text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-xl mx-auto md:mx-0">
+                            A creative professional specializing in UI/UX design and branding, focused on creating user-centric products with a clean and modern aesthetic.
+                        </p>
+                        <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4">
+                            <a href="work.html" class="w-full sm:w-auto bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition-all duration-300">View My Work</a>
+                            <a href="contact.html" class="w-full sm:w-auto bg-gray-200 dark:bg-gray-700 text-brand-text-light dark:text-brand-text-dark px-8 py-3 rounded-md font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+</section>
+
+
+<section id="work" class="py-20 sm:py-32">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="animasi animasi-fade-right"> 
+            
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Selected Work</h2>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">A collection of projects I'm passionate about.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                
+                <a href="project-1.html" class="group block rounded-lg">
+                    <div class="relative h-96 overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0abfe3d?q=80&w=2070" alt="Project 1" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
+                            <h3 class="text-2xl font-bold">Project Name One</h3>
+                            <p class="text-sm opacity-90">UI/UX Design, Branding</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="project-2.html" class="group block rounded-lg">
+                     <div class="relative h-96 overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1576153139958-b695143527de?q=80&w=1974" alt="Project 2" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 md:p-8 text-white">
+                            <h3 class="text-2xl font-bold">Project Name Two</h3>
+                            <p class="text-sm opacity-90">Creative Strategy</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="work.html" class="inline-block bg-transparent border border-gray-400 dark:border-gray-600 px-8 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    View All Projects
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-20 sm:py-32 bg-brand-gray dark:bg-gray-900/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="animasi animasi-fade-up">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+                
+                <div class="md:col-span-3 text-center md:text-left order-2 md:order-1">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">A Bit About Me</h2>
+                    <p class="mt-6 text-lg text-gray-600 dark:text-gray-400">
+                        I am a designer who believes in the power of simplicity. With over 5 years of experience, I've had the privilege of working with startups and established companies to create products that are not only beautiful but also intuitive and impactful.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                        My design process is deeply rooted in user research and empathy, ensuring that every decision is made with the user's best interest at heart. When I'm not designing, you can find me exploring new coffee shops or capturing moments through my camera lens.
+                    </p>
+                    <a href="about.html" class="inline-block mt-8 bg-transparent border border-gray-400 dark:border-gray-600 px-8 py-3 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+                        Selengkapnya tentang saya
+                    </a>
+                </div>
+
+                <div class="md:col-span-2 flex justify-center order-1 md:order-2">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop" alt="Portrait of Taufik" class="w-48 h-48 sm:w-64 sm:h-64 rounded-full object-cover grayscale shadow-lg">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="services" class="py-20 sm:py-32">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="animasi animasi-fade-left">
+
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">What I Do</h2>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">I offer a range of creative services to bring your ideas to life.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <a href="service-branding.html" class="group relative block text-center p-8 bg-brand-gray dark:bg-gray-900/50 rounded-lg transition-transform duration-300 ease-in-out hover:scale-110">
+                    <div class="transition-opacity duration-300 group-hover:opacity-20">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">Branding</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Crafting memorable brand identities that resonate.</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-transparent text-blue-600 dark:text-blue-400 text-lg font-bold rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                        Lihat Service
+                    </div>
+                </a>
+
+                <a href="service-uiux.html" class="group relative block text-center p-8 bg-brand-gray dark:bg-gray-900/50 rounded-lg transition-transform duration-300 ease-in-out hover:scale-110">
+                    <div class="transition-opacity duration-300 group-hover:opacity-20">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 013-3h.008c1.657 0 3 1.343 3 3v8.25a3 3 0 01-3 3h-.008z"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Designing intuitive and engaging user interfaces.</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-transparent text-blue-600 dark:text-blue-400 text-lg font-bold rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                        Lihat Service
+                    </div>
+                </a>
+
+                <a href="service-illustration.html" class="group relative block text-center p-8 bg-brand-gray dark:bg-gray-900/50 rounded-lg transition-transform duration-300 ease-in-out hover:scale-110">
+                    <div class="transition-opacity duration-300 group-hover:opacity-20">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.998 15.998 0 011.622-3.385m5.043.025a15.998 15.998 0 001.622-3.385m3.388 1.62a15.998 15.998 0 00-1.622-3.385m-5.043-.025a15.998 15.998 0 01-3.388-1.621m7.744 4.242a3 3 0 00-5.783 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.398-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.998 15.998 0 011.622-3.385"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">Illustration</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Creating custom illustrations that tell a story.</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-transparent text-blue-600 dark:text-blue-400 text-lg font-bold rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                        Lihat Service
+                    </div>
+                </a>
+
+                <a href="service-strategy.html" class="group relative block text-center p-8 bg-brand-gray dark:bg-gray-900/50 rounded-lg transition-transform duration-300 ease-in-out hover:scale-110">
+                     <div class="transition-opacity duration-300 group-hover:opacity-20">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12A2.25 2.25 0 0020.25 14.25V3m-16.5 0h16.5M12 6.75h.008v.008H12V6.75z"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">Creative Strategy</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Developing effective strategies for creative projects.</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-transparent text-blue-600 dark:text-blue-400 text-lg font-bold rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                        Lihat Service
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="contact.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition-all duration-300">
+                    Let's Work Together
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="testimonials" class="py-20 sm:py-32 bg-brand-gray dark:bg-gray-900/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="animasi animasi-zoom-in">
+
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Testimoni dari Klien Kami</h2>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Apa yang mereka katakan tentang hasil kerja dan kolaborasi bersama saya.</p>
+            </div>
+
+            <div class="relative">
+                <div id="testimonial-carousel" class="overflow-hidden">
+                    <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
+
+                        <div class="w-full flex-shrink-0 flex flex-col md:flex-row gap-8 group">
+                            <a href="project-1.html" class="testimonial-card w-full md:w-1/3 bg-brand-light dark:bg-brand-dark rounded-lg shadow-lg p-8 flex flex-col transition-all duration-300 ease-in-out group-hover:scale-95 hover:!scale-105 hover:!opacity-100 hover:z-20 relative">
+                                <div class="card-content transition-all duration-300">
+                                    <div class="relative h-40 mb-6 rounded-lg overflow-hidden">
+                                         <img src="https://images.unsplash.com/photo-1560250097-4b9b2e2afc61?q=80&w=2070" alt="Client 1" class="w-full h-full object-cover">
+                                         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-4"><div class="text-white"><h4 class="font-bold">Charlie & Janice</h4><p class="text-sm opacity-90">Sabtu, 11 September 2025</p></div></div>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 flex-grow">"Hasilnya melebihi ekspektasi. Taufik tidak hanya mendesain, tapi juga memberikan solusi kreatif yang sangat membantu project kami."</p>
+                                    <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-6 self-start">Lihat Project &rarr;</div>
+                                </div>
+                            </a>
+                            <a href="project-2.html" class="testimonial-card w-full md:w-1/3 bg-brand-light dark:bg-brand-dark rounded-lg shadow-lg p-8 flex flex-col transition-all duration-300 ease-in-out group-hover:scale-95 hover:!scale-105 hover:!opacity-100 hover:z-20 relative">
+                                <div class="card-content transition-all duration-300">
+                                     <div class="relative h-40 mb-6 rounded-lg overflow-hidden">
+                                         <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2070" alt="Client 2" class="w-full h-full object-cover">
+                                         <div class="absolute inset-0 bg-black bg-opacity-20 flex items-end p-4"><div class="text-white"><h4 class="font-bold">Luthfia & Syailendra</h4><p class="text-sm opacity-90">Minggu, 01 Agustus 2025</p></div></div>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 flex-grow">"The price is super affordable. The service is much better than expected. Thank you so much for helping us."</p>
+                                    <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-6 self-start">Lihat Project &rarr;</div>
+                                </div>
+                            </a>
+                            <a href="project-3.html" class="testimonial-card w-full md:w-1/3 bg-brand-light dark:bg-brand-dark rounded-lg shadow-lg p-8 flex flex-col transition-all duration-300 ease-in-out group-hover:scale-95 hover:!scale-105 hover:!opacity-100 hover:z-20 relative">
+                                <div class="card-content transition-all duration-300">
+                                     <div class="relative h-40 mb-6 rounded-lg overflow-hidden">
+                                         <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070" alt="Client 3" class="w-full h-full object-cover">
+                                         <div class="absolute inset-0 bg-black bg-opacity-20 flex items-end p-4"><div class="text-white"><h4 class="font-bold">Widya & Fakhri</h4><p class="text-sm opacity-90">Sabtu, 07 Agustus 2025</p></div></div>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 flex-grow">"Alhamdulillah seneng banget sama hasilnya, selain desainnya estetik, UX-nya juga baik. Fast respon dan sangat membantu."</p>
+                                    <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-6 self-start">Lihat Project &rarr;</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="w-full flex-shrink-0 flex flex-col md:flex-row gap-8 group">
+                            <a href="project-4.html" class="testimonial-card w-full md:w-1/3 bg-brand-light dark:bg-brand-dark rounded-lg shadow-lg p-8 flex flex-col transition-all duration-300 ease-in-out group-hover:scale-95 hover:!scale-105 hover:!opacity-100 hover:z-20 relative">
+                                <div class="card-content transition-all duration-300">
+                                    <div class="relative h-40 mb-6 rounded-lg overflow-hidden">
+                                         <img src="https://images.unsplash.com/photo-1554462623-9924fea3281b?q=80&w=1974" alt="Client 4" class="w-full h-full object-cover">
+                                         <div class="absolute inset-0 bg-black bg-opacity-20 flex items-end p-4"><div class="text-white"><h4 class="font-bold">Andi & Bella</h4><p class="text-sm opacity-90">Jumat, 20 Oktober 2025</p></div></div>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 flex-grow">"Prosesnya sangat mulus dari awal sampai akhir. Taufik sangat profesional, komunikatif, dan hasil akhirnya benar-benar sesuai dengan visi kami."</p>
+                                    <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-6 self-start">Lihat Project &rarr;</div>
+                                </div>
+                            </a>
+                            <a href="project-5.html" class="testimonial-card w-full md:w-1/3 bg-brand-light dark:bg-brand-dark rounded-lg shadow-lg p-8 flex flex-col transition-all duration-300 ease-in-out group-hover:scale-95 hover:!scale-105 hover:!opacity-100 hover:z-20 relative">
+                                <div class="card-content transition-all duration-300">
+                                    <div class="relative h-40 mb-6 rounded-lg overflow-hidden">
+                                         <img src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=1974" alt="Client 5" class="w-full h-full object-cover">
+                                         <div class="absolute inset-0 bg-black bg-opacity-20 flex items-end p-4"><div class="text-white"><h4 class="font-bold">Sarah Bright</h4><p class="text-sm opacity-90">Senin, 02 November 2025</p></div></div>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 flex-grow">"Working with Taufik was a breeze. He immediately understood the brand's aesthetic and delivered a stunning design ahead of schedule."</p>
+                                    <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-6 self-start">Lihat Project &rarr;</div>
+                                </div>
+                            </a>
+                            <a href="project-6.html" class="testimonial-card w-full md:w-1/3 bg-brand-light dark:bg-brand-dark rounded-lg shadow-lg p-8 flex flex-col transition-all duration-300 ease-in-out group-hover:scale-95 hover:!scale-105 hover:!opacity-100 hover:z-20 relative">
+                                <div class="card-content transition-all duration-300">
+                                     <div class="relative h-40 mb-6 rounded-lg overflow-hidden">
+                                         <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974" alt="Client 6" class="w-full h-full object-cover">
+                                         <div class="absolute inset-0 bg-black bg-opacity-20 flex items-end p-4"><div class="text-white"><h4 class="font-bold">David Chen</h4><p class="text-sm opacity-90">Rabu, 11 Desember 2025</p></div></div>
+                                    </div>
+                                     <p class="text-gray-600 dark:text-gray-400 flex-grow">"A true professional. The attention to detail in the UX design was impressive and has significantly improved our user engagement."</p>
+                                     <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-6 self-start">Lihat Project &rarr;</div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="w-full flex-shrink-0 flex flex-col md:flex-row gap-8 group">
+                            <a href="project-7.html" class="testimonial-card w-full md:w-1/3 bg-brand-light dark:bg-brand-dark rounded-lg shadow-lg p-8 flex flex-col transition-all duration-300 ease-in-out group-hover:scale-95 hover:!scale-105 hover:!opacity-100 hover:z-20 relative">
+                                <div class="card-content transition-all duration-300">
+                                     <div class="relative h-40 mb-6 rounded-lg overflow-hidden">
+                                         <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974" alt="Client 7" class="w-full h-full object-cover">
+                                         <div class="absolute inset-0 bg-black bg-opacity-20 flex items-end p-4"><div class="text-white"><h4 class="font-bold">Rina Hartono</h4><p class="text-sm opacity-90">Kamis, 15 Januari 2026</p></div></div>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 flex-grow">"Sangat berbakat dalam ilustrasi. Gaya visual yang dihasilkan untuk project kami benar-benar unik dan berbeda dari yang lain."</p>
+                                    <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-6 self-start">Lihat Project &rarr;</div>
+                                </div>
+                            </a>
+                           <a href="project-8.html" class="testimonial-card w-full md:w-1/3 bg-brand-light dark:bg-brand-dark rounded-lg shadow-lg p-8 flex flex-col transition-all duration-300 ease-in-out group-hover:scale-95 hover:!scale-105 hover:!opacity-100 hover:z-20 relative">
+                                <div class="card-content transition-all duration-300">
+                                    <div class="relative h-40 mb-6 rounded-lg overflow-hidden">
+                                         <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070" alt="Client 8" class="w-full h-full object-cover">
+                                         <div class="absolute inset-0 bg-black bg-opacity-20 flex items-end p-4"><div class="text-white"><h4 class="font-bold">Michael Ananda</h4><p class="text-sm opacity-90">Selasa, 03 Februari 2026</p></div></div>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400 flex-grow">"The strategic input was invaluable. Taufik helped us refine our creative direction and a set a clear path for future development."</p>
+                                    <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-6 self-start">Lihat Project &rarr;</div>
+                                </div>
+                            </a>
+                            <a href="project-9.html" class="testimonial-card w-full md:w-1/3 bg-brand-light dark:bg-brand-dark rounded-lg shadow-lg p-8 flex flex-col transition-all duration-300 ease-in-out group-hover:scale-95 hover:!scale-105 hover:!opacity-100 hover:z-20 relative">
+                                <div class="card-content transition-all duration-300">
+                                     <div class="relative h-40 mb-6 rounded-lg overflow-hidden">
+                                         <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1974" alt="Client 9" class="w-full h-full object-cover">
+                                         <div class="absolute inset-0 bg-black bg-opacity-20 flex items-end p-4"><div class="text-white"><h4 class="font-bold">Budi Santoso</h4><p class="text-sm opacity-90">Senin, 02 Maret 2026</p></div></div>
+                                    </div>
+                                     <p class="text-gray-600 dark:text-gray-400 flex-grow">"Desain ulang website kami membuat traffic naik 40%. Data speaks for itself. Kerjanya cepat dan hasilnya luar biasa. Recommended!"</p>
+                                     <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-6 self-start">Lihat Project &rarr;</div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <button id="prev-testimonial" class="absolute top-1/2 -translate-y-1/2 -left-4 bg-white dark:bg-gray-800 shadow-md rounded-full p-2 hidden md:block z-30">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button id="next-testimonial" class="absolute top-1/2 -translate-y-1/2 -right-4 bg-white dark:bg-gray-800 shadow-md rounded-full p-2 hidden md:block z-30">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+            <div id="testimonial-dots" class="flex justify-center space-x-3 mt-8"></div>
+        </div>
+    </div>
+</section>
+
+<section id="journal" class="py-20 sm:py-32">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="animasi animasi-fade-up">
+
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Journal</h2>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Thoughts, stories, and design insights.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
+                
+                <div class="lg:col-span-2">
+                    <h3 class="text-xl font-bold mb-6">Latest Post</h3>
+                    <a href="artikel-1.html" class="group block">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
+                            <div class="sm:col-span-1 overflow-hidden rounded-lg">
+                                <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=800" alt="Featured Post" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out">
+                            </div>
+                            <div class="sm:col-span-2">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">June 25, 2025</p>
+                                <h4 class="text-2xl font-bold mt-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                    The Art of Minimalism in Web Design
+                                </h4>
+                                <p class="mt-3 text-base text-gray-600 dark:text-gray-400">
+                                    Exploring how less can be more in creating impactful user experiences. A deep dive into the principles that guide minimalist design...
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-1">
+                    <h4 class="text-xl font-bold border-b border-gray-300 dark:border-gray-700 pb-4 mb-2">
+                        Tulisan Lainnya
+                    </h4>
+                    <div class="flex flex-col">
+                        <a href="artikel-2.html" class="group flex items-center gap-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-md px-2 -mx-2 transition-colors">
+                            <span class="text-2xl font-bold text-gray-300 dark:text-gray-700">01</span>
+                            <h5 class="font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400">Why Typography is the Soul of Design</h5>
+                        </a>
+                        <a href="artikel-3.html" class="group flex items-center gap-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-md px-2 -mx-2 transition-colors">
+                            <span class="text-2xl font-bold text-gray-300 dark:text-gray-700">02</span>
+                            <h5 class="font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400">My Favorite Tools for Creative Workflow</h5>
+                        </a>
+                        <a href="artikel-4.html" class="group flex items-center gap-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-md px-2 -mx-2 transition-colors">
+                            <span class="text-2xl font-bold text-gray-300 dark:text-gray-700">03</span>
+                            <h5 class="font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400">A Designer's Guide to User Empathy</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="py-20 sm:py-32 bg-brand-gray dark:bg-gray-900/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="animasi animasi-zoom-in">
+
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Frequently Asked Questions</h2>
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Beberapa pertanyaan yang sering ditanyakan oleh klien.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+                
+                <div class="lg:col-span-1">
+                    <div id="qa-questions-container" class="flex flex-col">
+                        <button class="qa-question-btn qa-question-active text-left p-4 border-b border-gray-200 dark:border-gray-700" data-target="#answer-1">
+                            Apa saja layanan utama yang Anda tawarkan?
+                        </button>
+                        <button class="qa-question-btn text-left p-4 border-b border-gray-200 dark:border-gray-700" data-target="#answer-2">
+                            Bagaimana proses kerja Anda?
+                        </button>
+                        <button class="qa-question-btn text-left p-4 border-b border-gray-200 dark:border-gray-700" data-target="#answer-3">
+                            Berapa lama waktu pengerjaan proyek?
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <div id="qa-answers-container">
+                        <div id="answer-1" class="qa-answer-panel">
+                            <h3 class="text-xl font-bold mb-3">Layanan Utama Saya</h3>
+                            <p class="text-gray-600 dark:text-gray-400 space-y-4">
+                                Saya menawarkan empat layanan utama: Branding, UI/UX Design, Illustration, dan Creative Strategy. Fokus saya adalah membantu brand dan produk untuk tampil menonjol dengan desain yang tidak hanya indah tapi juga fungsional dan berpusat pada pengguna.
+                            </p>
+                        </div>
+                        <div id="answer-2" class="qa-answer-panel hidden">
+                            <h3 class="text-xl font-bold mb-3">Proses Kerja Saya</h3>
+                            <p class="text-gray-600 dark:text-gray-400 space-y-4">
+                                Proses saya selalu dimulai dengan riset mendalam untuk memahami audiens dan tujuan bisnis Anda. Dari sana, kita lanjut ke tahap strategi, wireframing, desain visual, hingga prototyping.
+                            </p>
+                        </div>
+                        <div id="answer-3" class="qa-answer-panel hidden">
+                           <h3 class="text-xl font-bold mb-3">Estimasi Waktu Proyek</h3>
+                            <p class="text-gray-600 dark:text-gray-400 space-y-4">
+                                Waktu pengerjaan sangat bervariasi tergantung pada skala proyek. Proyek desain logo bisa memakan waktu 1-2 minggu, sementara desain aplikasi UI/UX bisa memakan waktu 1-3 bulan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 pt-10 border-t border-gray-300 dark:border-gray-700 max-w-2xl mx-auto">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Belum Menemukan Jawaban?</h3>
+                <p class="mt-2 text-gray-600 dark:text-gray-400">
+                    Jika Anda tidak menemukan apa yang Anda cari, jangan ragu untuk menghubungi saya secara langsung.
+                </p>
+                <a href="#contact" class="inline-block mt-6 bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition-all duration-300">
+                    Hubungi Saya
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="bg-brand-gray dark:bg-gray-900/50">
+    <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500 dark:text-gray-400">
+        <p>&copy; 2025 Taufik. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
