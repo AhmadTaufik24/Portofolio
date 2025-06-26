@@ -2,9 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <!-- Batasi zoom di mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  
   <title>Taufik - Digital Experience Designer</title>
 
   <!-- Tailwind -->
@@ -18,7 +16,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Tailwind Custom Config -->
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -36,7 +34,7 @@
     }
   </script>
 
-  <!-- Google Translate Script -->
+  <!-- Google Translate -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
@@ -47,10 +45,29 @@
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Sembunyikan elemen Google Translate -->
   <style>
-    /* Sembunyikan dropdown Google Translate */
-    #google_translate_element {
-      display: none;
+    #google_translate_element,
+    .goog-te-banner-frame,
+    .goog-te-gadget,
+    .goog-te-combo,
+    .goog-te-balloon-frame,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .goog-text-highlight,
+    body > .skiptranslate {
+      display: none !important;
+      visibility: hidden !important;
+    }
+    html {
+      position: static !important;
+    }
+    body {
+      top: 0px !important;
+    }
+    .skiptranslate {
+      display: none !important;
     }
   </style>
 </head>
@@ -114,7 +131,7 @@
       </div>
     </div>
 
-    <!-- Google Translate hidden container -->
+    <!-- Google Translate Element (wajib ada tapi tersembunyi) -->
     <div id="google_translate_element"></div>
   </header>
 
@@ -133,7 +150,6 @@
       }
     });
   </script>
-
 </body>
 </html>
 
