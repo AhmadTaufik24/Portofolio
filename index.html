@@ -118,51 +118,45 @@
       </div>
     </div>
 
-    <!-- Google Translate Element (hidden tapi wajib) -->
+    <!-- Google Translate Element (required but hidden) -->
     <div id="google_translate_element"></div>
   </header>
 
   <!-- Language Toggle Script -->
   <script>
-    // Helper untuk cookie
     function setCookie(name, value, days) {
-      const date = new Date();
-      date.setTime(date.getTime() + (days*24*60*60*1000));
-      const expires = "expires=" + date.toUTCString();
-      document.cookie = name + "=" + value + ";" + expires + ";path=/";
+      const expires = new Date(Date.now() + days*864e5).toUTCString();
+      document.cookie = name + '=' + value + '; expires=' + expires + '; path=/';
     }
 
     function getCookie(name) {
-      const nameEQ = name + "=";
-      const ca = document.cookie.split(';');
-      for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-      }
-      return null;
+      return document.cookie.split('; ').find(row => row.startsWith(name + '='))?.split('=')[1];
     }
 
     function applyLang(lang) {
+      setCookie('googtrans', `/en/${lang}`, 365);
+      localStorage.setItem('prefLang', lang);
       document.documentElement.lang = lang;
       document.getElementById('toggle-language').innerText = lang === 'en' ? '🇬🇧 EN' : '🇮🇩 ID';
-      localStorage.setItem('prefLang', lang);
-      setCookie('googtrans', `/en/${lang}`, 365);
     }
 
     document.getElementById('toggle-language').addEventListener('click', () => {
       const current = localStorage.getItem('prefLang') || 'en';
       const next = current === 'en' ? 'id' : 'en';
       applyLang(next);
-      location.reload(); // untuk terapkan translate
+
+      // beri delay agar Google Translate bisa proses
+      setTimeout(() => {
+        location.reload();
+      }, 500);
     });
 
-    // On page load
     window.addEventListener('load', () => {
       const savedLang = localStorage.getItem('prefLang') || 'en';
       applyLang(savedLang);
     });
   </script>
+
 </body>
 
 
