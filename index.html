@@ -544,28 +544,22 @@
 </footer>
 
 <script src="script.js"></script>
-<!-- Google Translate Element (Hidden) -->
-<div id="google_translate_element" style="display: none;"></div>
 
-<!-- Google Translate API & Translate Logic -->
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<div id="google_translate_element" style="display:none;"></div>
 <script src="translate.js"></script>
-
-<!-- Google Translate Styles to Hide Default UI -->
 <style>
   .goog-te-banner-frame,
   .goog-te-gadget,
   .goog-te-combo,
+  .goog-te-balloon-frame,
   .goog-tooltip,
-  .goog-tooltip:hover,
   .goog-text-highlight,
   body > .skiptranslate {
-    display: none !important;
-    visibility: hidden !important;
+    display:none!important;
+    visibility:hidden!important;
   }
-
-  html { position: static !important; }
-  body { top: 0px !important; }
+  html { position:static!important; }
+  body { top:0!important; }
 </style>
 </body>
 </html>
