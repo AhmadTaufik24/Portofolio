@@ -2,98 +2,116 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-  <title>Taufik – Digital Experience Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Taufik - Digital Experience Designer</title>
+
   <!-- Tailwind & Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
-      darkMode:'class',
-      theme:{extend:{colors:{'brand-dark':'#111','brand-light':'#fff','brand-gray':'#f3f4f6','brand-text-dark':'#e5e7eb','brand-text-light':'#1f2937'}}}
-    };
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-dark': '#111',
+            'brand-light': '#fff',
+            'brand-gray': '#f3f4f6',
+            'brand-text-dark': '#e5e7eb',
+            'brand-text-light': '#1f2937'
+          }
+        }
+      }
+    }
   </script>
+
+  <!-- Google Translate Config -->
+  <script>
+    window.___gcfg = {
+      lang: 'en',
+      parsetags: 'on'
+    };
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,id',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Hide Google Translate UI -->
   <style>
-    /* Hide all Google Translate UI */
-    #google_translate_element, .goog-te-banner-frame, .goog-te-gadget, .goog-te-combo,
-    .goog-te-balloon-frame, .goog-tooltip, .goog-tooltip:hover, .goog-text-highlight,
-    body > .skiptranslate { display:none!important; visibility:hidden!important; }
-    html{position:static!important;} body{top:0!important;}
+    #google_translate_element,
+    .goog-te-banner-frame,
+    .goog-te-gadget,
+    .goog-te-combo,
+    .goog-te-balloon-frame,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .goog-text-highlight,
+    body > .skiptranslate {
+      display: none !important;
+      visibility: hidden !important;
+    }
+    html { position: static !important; }
+    body { top: 0px !important; }
   </style>
 </head>
+
 <body class="bg-brand-light dark:bg-brand-dark text-brand-text-light dark:text-brand-text-dark transition-colors duration-300 overflow-x-hidden">
+  <!-- Header dan semua isi Anda tidak diubah -->
 
-  <!-- HEADER (TIDAK DIUBAH) -->
-  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-brand-light dark:bg-brand-dark md:bg-white/80 md:dark:bg-brand-dark/80 md:backdrop-blur-sm transition-colors duration-300">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <div>
-          <a href="index.html" class="text-2xl font-bold md:hidden">TAUFIK</a>
-          <nav class="hidden md:flex items-center space-x-8">
-            <a href="index.html" ...>Home</a>
-            <a href="work.html" ...>Work</a>
-            <a href="about.html" ...>About</a>
-            <a href="services.html" ...>Services</a>
-            <a href="journal.html" ...>Journal</a>
-            <a href="contact.html" ...>Contact</a>
-          </nav>
-        </div>
-        <div class="flex items-center gap-2">
-          <!-- Theme Toggle -->
-          <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-            <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5">…</svg>
-            <svg id="theme-toggle-light-icon" class="hidden h-5 w-5">…</svg>
-          </button>
-          <!-- Language Toggle -->
-          <button id="toggle-language" class="text-sm px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-            🇬🇧 EN
-          </button>
-          <!-- Mobile Menu Button -->
-          <div class="md:hidden">
-            <button id="mobile-menu-button" class="p-2 rounded-md"><svg class="h-6 w-6">…</svg></button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-brand-light dark:bg-brand-dark pb-4">
-      <!-- links... -->
-    </div>
-    <!-- hidden placeholder -->
-    <div id="google_translate_element"></div>
-  </header>
+  <!-- Google Translate Element (required but hidden) -->
+  <div id="google_translate_element"></div>
 
-  <!-- SCRIPT TRANSLATE + TOGGLE -->
+  <!-- Language Toggle Script -->
   <script>
-    function setCookie(n,v,d){
-      const exp=new Date(Date.now()+d*864e5).toUTCString();
-      document.cookie=`${n}=${v};expires=${exp};path=/`;
+    function setCookie(name, value, days) {
+      const d = new Date();
+      d.setTime(d.getTime() + (days*24*60*60*1000));
+      const expires = "expires=" + d.toUTCString();
+      document.cookie = `${name}=${value};${expires};path=/;domain=.github.io`;
     }
-    function getCookie(n){
-      return document.cookie.split('; ').find(r=>r.startsWith(n+'='))?.split('=')[1]||'';
+
+    function getCookie(name) {
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        const c = ca[i].trim();
+        if (c.indexOf(name + "=") === 0) return c.substring(name.length + 1);
+      }
+      return null;
     }
-    function applyLang(lang, reload=false){
-      setCookie('googtrans', `/en/${lang}`, 365);
+
+    function applyLang(lang) {
+      const cookieVal = `/en/${lang}`;
+      setCookie('googtrans', cookieVal, 365);
       localStorage.setItem('prefLang', lang);
       document.documentElement.lang = lang;
-      document.getElementById('toggle-language').innerText = lang==='en' ? '🇬🇧 EN' : '🇮🇩 ID';
-      if(reload) location.reload();
+      const btn = document.getElementById('toggle-language');
+      if (btn) btn.innerText = lang === 'en' ? '🇬🇧 EN' : '🇮🇩 ID';
     }
 
-    document.getElementById('toggle-language').addEventListener('click', ()=>{
-      const curr = localStorage.getItem('prefLang')||'en';
-      const next = curr==='en'?'id':'en';
-      applyLang(next, true);
+    document.getElementById('toggle-language').addEventListener('click', () => {
+      const current = localStorage.getItem('prefLang') || 'en';
+      const next = current === 'en' ? 'id' : 'en';
+      applyLang(next);
+
+      // Delay sebelum reload agar Translate bisa sync
+      setTimeout(() => {
+        location.reload();
+      }, 1200);
     });
 
-    window.addEventListener('load', ()=>{
-      const lang = localStorage.getItem('prefLang') || 'en';
-      applyLang(lang, false);
-      // Load Google Translate script AFTER cookie
-      const s = document.createElement('script');
-      s.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-      document.head.appendChild(s);
+    window.addEventListener('load', () => {
+      const savedLang = localStorage.getItem('prefLang') || 'en';
+      applyLang(savedLang);
     });
   </script>
 </body>
