@@ -32,7 +32,7 @@
     }
   </script>
 
-  <!-- CSS: Sembunyikan elemen Google Translate -->
+  <!-- CSS untuk sembunyikan elemen Google Translate -->
   <style>
     #google_translate_element,
     .goog-te-banner-frame.skiptranslate,
@@ -68,6 +68,7 @@
 
 <body class="bg-brand-light dark:bg-brand-dark text-brand-text-light dark:text-brand-text-dark transition-colors duration-300 overflow-x-hidden">
 
+  <!-- Header -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-brand-light dark:bg-brand-dark md:bg-white/80 md:dark:bg-brand-dark/80 md:backdrop-blur-sm transition-colors duration-300">
     <div class="container max-w-full mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
@@ -100,7 +101,7 @@
             <span id="lang-label" class="notranslate" translate="no">IDN</span>
           </button>
 
-          <!-- Mobile Menu -->
+          <!-- Mobile Menu Button -->
           <div class="md:hidden ml-2">
             <button id="mobile-menu-button" class="p-2 rounded-md">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -113,11 +114,24 @@
     </div>
   </header>
 
-  <!-- Google Translate Elemen (disembunyikan) -->
+  <!-- ✅ Mobile Menu -->
+  <nav id="mobile-menu" class="md:hidden fixed top-16 left-0 right-0 bg-white dark:bg-brand-dark shadow-md border-t border-gray-200 dark:border-gray-700 hidden z-40">
+    <div class="flex flex-col p-4 space-y-2">
+      <a href="index.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+      <a href="work.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Work</a>
+      <a href="about.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+      <a href="services.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Services</a>
+      <a href="journal.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Journal</a>
+      <a href="contact.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Google Translate Element (hidden) -->
   <div id="google_translate_element"></div>
 
-  <!-- Script Toggle Bahasa -->
+  <!-- ✅ Script -->
   <script>
+    // Language toggle
     function setCookie(name, value, days, domain = null) {
       const expires = new Date(Date.now() + days * 864e5).toUTCString();
       let cookieString = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
@@ -144,6 +158,11 @@
       const isIndo = getCookie('googtrans') === '/en/id';
       document.getElementById('lang-label').textContent = isIndo ? 'IDN' : 'ENG';
       document.getElementById('lang-flag').textContent = isIndo ? '🇮🇩' : '🇬🇧';
+    });
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
     });
   </script>
 </body>
