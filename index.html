@@ -32,7 +32,7 @@
     }
   </script>
 
-  <!-- CSS untuk sembunyikan elemen Google Translate -->
+  <!-- Sembunyikan Elemen Google Translate -->
   <style>
     #google_translate_element,
     .goog-te-banner-frame.skiptranslate,
@@ -85,7 +85,7 @@
         </div>
 
         <div class="flex items-center space-x-2">
-          <!-- Toggle Dark Mode -->
+          <!-- Dark Mode Toggle -->
           <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -95,13 +95,13 @@
             </svg>
           </button>
 
-          <!-- Toggle Bahasa -->
+          <!-- Language Toggle -->
           <button id="language-toggle" class="flex items-center gap-1 px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition">
             <span id="lang-flag" class="notranslate" translate="no">🇮🇩</span>
             <span id="lang-label" class="notranslate" translate="no">IDN</span>
           </button>
 
-          <!-- Mobile Menu Button -->
+          <!-- Hamburger Button -->
           <div class="md:hidden ml-2">
             <button id="mobile-menu-button" class="p-2 rounded-md">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -114,7 +114,7 @@
     </div>
   </header>
 
-  <!-- ✅ Mobile Menu -->
+  <!-- Mobile Menu -->
   <nav id="mobile-menu" class="md:hidden fixed top-16 left-0 right-0 bg-white dark:bg-brand-dark shadow-md border-t border-gray-200 dark:border-gray-700 hidden z-40">
     <div class="flex flex-col p-4 space-y-2">
       <a href="index.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
@@ -126,11 +126,41 @@
     </div>
   </nav>
 
-  <!-- Google Translate Element (hidden) -->
+  <!-- Google Translate (hidden) -->
   <div id="google_translate_element"></div>
 
-  <!-- ✅ Script -->
+  <!-- Script -->
   <script>
+    // Dark mode toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      darkIcon.classList.toggle('hidden', !isDark);
+      lightIcon.classList.toggle('hidden', isDark);
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Load theme from localStorage
+    window.addEventListener('load', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+        darkIcon.classList.remove('hidden');
+      } else {
+        document.documentElement.classList.remove('dark');
+        lightIcon.classList.remove('hidden');
+      }
+
+      // Language toggle label
+      const isIndo = getCookie('googtrans') === '/en/id';
+      document.getElementById('lang-label').textContent = isIndo ? 'IDN' : 'ENG';
+      document.getElementById('lang-flag').textContent = isIndo ? '🇮🇩' : '🇬🇧';
+    });
+
     // Language toggle
     function setCookie(name, value, days, domain = null) {
       const expires = new Date(Date.now() + days * 864e5).toUTCString();
@@ -154,19 +184,12 @@
       location.reload();
     });
 
-    window.addEventListener('load', () => {
-      const isIndo = getCookie('googtrans') === '/en/id';
-      document.getElementById('lang-label').textContent = isIndo ? 'IDN' : 'ENG';
-      document.getElementById('lang-flag').textContent = isIndo ? '🇮🇩' : '🇬🇧';
-    });
-
     // Mobile menu toggle
     document.getElementById('mobile-menu-button').addEventListener('click', function () {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
   </script>
 </body>
-
 <main>
    <!-- SECTION HOME -->
 <section id="home" class="pt-20 pb-12 sm:pt-24 md:pt-28 lg:pt-32">
