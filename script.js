@@ -1,95 +1,22 @@
 /* =================================================================
-   KODE JAVASCRIPT LENGKAP - FINAL (dengan fitur Translate)
+   KODE JAVASCRIPT LENGKAP - VERSI FINAL SEBENARNYA
 ================================================================= */
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- 1. SISTEM TRANSLATE KUSTOM ---
-
-    // Kamus untuk semua teks yang akan diterjemahkan
-    const translations = {
-        'en': {
-            'nav-home': 'Home',
-            'nav-work': 'Work',
-            'nav-about': 'About',
-            'nav-services': 'Services',
-            'nav-journal': 'Journal',
-            'nav-contact': 'Contact',
-            'hero-title': "Hi, I’m Taufik – I build <span class='text-blue-600 dark:text-blue-400'>elegant</span> digital experiences.",
-            'hero-subtitle': "A creative professional specializing in UI/UX design and branding, focused on creating user-centric products with a clean and modern aesthetic.",
-            'hero-cta1': "View My Work",
-            'hero-cta2': "Contact Me",
-        },
-        'id': {
-            'nav-home': 'Beranda',
-            'nav-work': 'Karya',
-            'nav-about': 'Tentang',
-            'nav-services': 'Layanan',
-            'nav-journal': 'Jurnal',
-            'nav-contact': 'Kontak',
-            'hero-title': "Hai, saya Taufik – Saya membangun pengalaman digital yang <span class='text-blue-600 dark:text-blue-400'>elegan</span>.",
-            'hero-subtitle': "Seorang profesional kreatif dengan spesialisasi di desain UI/UX dan branding, fokus pada pembuatan produk yang berpusat pada pengguna dengan estetika yang bersih dan modern.",
-            'hero-cta1': "Lihat Karya Saya",
-            'hero-cta2': "Hubungi Saya",
-        }
-    };
-
-    const languageToggle = document.getElementById('language-toggle');
-    const allTextElements = document.querySelectorAll('[data-lang-en]'); // Ambil semua elemen yang punya label bahasa
-
-    function setLanguage(lang) {
-        // Ganti setiap teks di halaman sesuai bahasa yang dipilih
-        allTextElements.forEach(el => {
-            const text = el.getAttribute(`data-lang-${lang}`);
-            if (text) {
-                el.innerHTML = text;
-            }
-        });
-
-        // Perbarui teks pada tombol
-        if (languageToggle) {
-            languageToggle.innerHTML = lang === 'id' ? '🇮🇩 ID' : '🇬🇧 EN';
-        }
-        
-        // Simpan pilihan bahasa pengguna
-        localStorage.setItem('prefLang', lang);
-        document.documentElement.lang = lang;
-    }
-
-    // Event listener untuk tombol ganti bahasa
-    if (languageToggle) {
-        languageToggle.addEventListener('click', () => {
-            const currentLang = localStorage.getItem('prefLang') || 'id';
-            const newLang = currentLang === 'id' ? 'en' : 'id';
-            setLanguage(newLang);
-        });
-    }
-
-    // Saat halaman dimuat, terapkan bahasa yang tersimpan atau default ke ID
-    const savedLang = localStorage.getItem('prefLang') || 'id';
-    setLanguage(savedLang);
-
-
-    // --- 2. Mobile Menu Toggle ---
+    // --- 1. Mobile Menu Toggle ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        mobileMenu.addEventListener('click', (event) => {
-            if (event.target.tagName === 'A') {
-                mobileMenu.classList.add('hidden');
-            }
-        });
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        mobileMenu.addEventListener('click', (event) => { if (event.target.tagName === 'A') mobileMenu.classList.add('hidden'); });
     }
 
-    // --- 3. Dark Mode Toggle ---
+    // --- 2. Dark Mode Toggle ---
     const themeToggleBtn = document.getElementById('theme-toggle');
     if (themeToggleBtn) {
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-        
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             if(themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
             if(themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');
@@ -99,33 +26,108 @@ document.addEventListener('DOMContentLoaded', function() {
             if(themeToggleLightIcon) themeToggleLightIcon.classList.add('hidden');
             document.documentElement.classList.remove('dark');
         }
-
         themeToggleBtn.addEventListener('click', function() {
             if(themeToggleDarkIcon) themeToggleDarkIcon.classList.toggle('hidden');
             if(themeToggleLightIcon) themeToggleLightIcon.classList.toggle('hidden');
             document.documentElement.classList.toggle('dark');
-            if (document.documentElement.classList.contains('dark')) {
-                localStorage.setItem('color-theme', 'dark');
-            } else {
-                localStorage.setItem('color-theme', 'light');
-            }
+            if (document.documentElement.classList.contains('dark')) { localStorage.setItem('color-theme', 'dark'); } 
+            else { localStorage.setItem('color-theme', 'light'); }
         });
     }
 
-    // --- 4. Mesin Animasi Scroll (jika ada section dengan kelas .animasi) ---
+    // --- 3. Mesin Animasi Scroll ---
     const elemenAnimasi = document.querySelectorAll('.animasi');
     if (elemenAnimasi.length > 0) {
         const observerAnimasi = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('aktif');
-                } else {
-                    entry.target.classList.remove('aktif');
-                }
+                if (entry.isIntersecting) { entry.target.classList.add('aktif'); } 
+                else { entry.target.classList.remove('aktif'); }
             });
         }, { threshold: 0.1 });
-        elemenAnimasi.forEach(el => {
-            observerAnimasi.observe(el);
+        elemenAnimasi.forEach(el => { observerAnimasi.observe(el); });
+    }
+
+    // --- 4. Navbar Aktif Saat Scroll ---
+    const navLinks = document.querySelectorAll('header nav a');
+    const sections = document.querySelectorAll('main section[id]');
+    if (navLinks.length > 0 && sections.length > 0) {
+        const observerNavbar = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('navbar-aktif');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('navbar-aktif');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: "-50% 0px -50% 0px" });
+        sections.forEach(section => { observerNavbar.observe(section); });
+    }
+
+    // --- 5. Logika untuk Journal Slider (Swiper.js) ---
+    const journalSliderEl = document.querySelector('.journal-slider');
+    if (journalSliderEl) {
+        const journalData = [
+            { title: "The Art of Minimalism in Web Design", description: "Exploring how less can be more...", link: "artikel-1.html" },
+            { title: "Why Typography is the Soul of Design", description: "A deep dive into how fonts shape perception...", link: "artikel-2.html" },
+            { title: "My Favorite Tools for Creative Workflow", description: "From Figma to Framer, here are the tools...", link: "artikel-3.html" },
+            { title: "A Designer's Guide to User Empathy", description: "Understanding the user is the first step...", link: "artikel-4.html" },
+        ];
+        const descriptionTitle = document.getElementById('journal-title');
+        const descriptionExcerpt = document.getElementById('journal-excerpt');
+        const readMoreBtn = document.getElementById('journal-readmore');
+
+        const swiper = new Swiper('.journal-slider', {
+            effect: 'slide',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            loop: true,
+            spaceBetween: 20,
+            navigation: { nextEl: '.journal-next', prevEl: '.journal-prev' },
+            on: {
+                slideChange: function () {
+                    const activeIndex = this.realIndex;
+                    if (journalData[activeIndex]) {
+                        if(descriptionTitle) descriptionTitle.textContent = journalData[activeIndex].title;
+                        if(descriptionExcerpt) descriptionExcerpt.textContent = journalData[activeIndex].description;
+                        if(readMoreBtn) readMoreBtn.href = journalData[activeIndex].link;
+                    }
+                },
+                init: function () {
+                    if (journalData[0]) {
+                        if(descriptionTitle) descriptionTitle.textContent = journalData[0].title;
+                        if(descriptionExcerpt) descriptionExcerpt.textContent = journalData[0].description;
+                        if(readMoreBtn) readMoreBtn.href = journalData[0].link;
+                    }
+                }
+            },
+        });
+    }
+
+    // --- 6. Logika untuk Accordion Q&A ---
+    const qaItems = document.querySelectorAll('.qa-item');
+    if (qaItems.length > 0) {
+        qaItems.forEach(item => {
+            const questionBtn = item.querySelector('.qa-question');
+            if (questionBtn) {
+                questionBtn.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('active');
+                    qaItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            const otherAnswer = otherItem.querySelector('.qa-answer');
+                            if(otherAnswer) otherAnswer.classList.remove('open');
+                        }
+                    });
+                    item.classList.toggle('active');
+                    const answerPanel = item.querySelector('.qa-answer');
+                    if(answerPanel) answerPanel.classList.toggle('open');
+                });
+            }
         });
     }
 
