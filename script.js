@@ -125,27 +125,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // === 6. Accordion Q&A ===
-  const qaButtons = document.querySelectorAll('.qa-question-btn');
-  const qaPanels = document.querySelectorAll('.qa-answer-panel');
+  // --- Accordion FAQ ---
+const faqToggles = document.querySelectorAll('.faq-toggle');
 
-  if (qaButtons.length > 0 && qaPanels.length > 0) {
-    qaButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const targetId = button.getAttribute('data-target');
-        const targetPanel = document.getElementById(targetId);
+faqToggles.forEach((toggle) => {
+  toggle.addEventListener('click', () => {
+    const icon = toggle.querySelector('.faq-icon');
+    const content = toggle.nextElementSibling;
 
-        // Reset semua
-        qaButtons.forEach(btn => btn.classList.remove('qa-question-active'));
-        qaPanels.forEach(panel => panel.classList.add('hidden'));
-
-        // Aktifkan yang dipilih
-        button.classList.add('qa-question-active');
-        if (targetPanel) {
-          targetPanel.classList.remove('hidden');
-        }
-      });
+    // Tutup semua terlebih dahulu
+    faqToggles.forEach(btn => {
+      btn.nextElementSibling.classList.add('hidden');
+      btn.querySelector('.faq-icon').classList.remove('rotate-180');
     });
-  }
 
+    // Buka elemen yang diklik
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      icon.classList.add('rotate-180');
+    } else {
+      content.classList.add('hidden');
+    }
+  });
 });
