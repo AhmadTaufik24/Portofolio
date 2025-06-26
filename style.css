@@ -3,7 +3,8 @@
 ================================================================= */
 
 /* ====== 1. Gaya Dasar & Font ====== */
-body {
+html, body {
+    overflow-x: hidden;
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
