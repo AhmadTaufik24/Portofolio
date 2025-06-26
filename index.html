@@ -29,6 +29,19 @@
                 }
             }
         }
+
+<div class="flex items-center">
+  <!-- Dark Mode Toggle -->
+  <button id="theme-toggle" ...>...</button>
+
+  <!-- Language Toggle (ADD THIS) -->
+  <button id="toggle-language" class="ml-2 text-sm px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+    🇬🇧 EN
+  </button>
+
+  <!-- Mobile Menu Button -->
+  <button id="mobile-menu-button" ...>...</button>
+</div>
     </script>
 </head>
 <body class="bg-brand-light dark:bg-brand-dark text-brand-text-light dark:text-brand-text-dark transition-colors duration-300">
@@ -518,13 +531,14 @@
 </footer>
 
 <script src="script.js"></script>
-<!-- Google Translate Hidden Element -->
+<!-- Google Translate Element (Hidden) -->
 <div id="google_translate_element" style="display: none;"></div>
 
-<!-- Google Translate API -->
+<!-- Google Translate API & Translate Logic -->
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="translate.js"></script>
 
+<!-- Google Translate Styles to Hide Default UI -->
 <style>
   .goog-te-banner-frame,
   .goog-te-gadget,
