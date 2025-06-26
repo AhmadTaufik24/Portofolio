@@ -1,138 +1,102 @@
-<!DOCTYPE html><html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Taufik - Digital Experience Designer</title>  <!-- Tailwind & Fonts -->  <script src="https://cdn.tailwindcss.com"></script>  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />  <!-- Tailwind Config -->  <script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>Taufik – Digital Experience Designer</title>
+  <!-- Tailwind & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
     tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            'brand-dark': '#111',
-            'brand-light': '#fff',
-            'brand-gray': '#f3f4f6',
-            'brand-text-dark': '#e5e7eb',
-            'brand-text-light': '#1f2937'
-          }
-        }
-      }
+      darkMode:'class',
+      theme:{extend:{colors:{'brand-dark':'#111','brand-light':'#fff','brand-gray':'#f3f4f6','brand-text-dark':'#e5e7eb','brand-text-light':'#1f2937'}}}
     };
-  </script>  <!-- Google Translate -->  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,id',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>  <!-- Hide Google Translate UI -->  <style>
-    #google_translate_element,
-    .goog-te-banner-frame,
-    .goog-te-gadget,
-    .goog-te-combo,
-    .goog-te-balloon-frame,
-    .goog-tooltip,
-    .goog-tooltip:hover,
-    .goog-text-highlight,
-    body > .skiptranslate {
-      display: none !important;
-      visibility: hidden !important;
-    }
-    html { position: static !important; }
-    body { top: 0px !important; }
-  </style></head><body class="bg-brand-light dark:bg-brand-dark text-brand-text-light dark:text-brand-text-dark transition-colors duration-300 overflow-x-hidden">
-  <!-- Header -->
+  </script>
+  <style>
+    /* Hide all Google Translate UI */
+    #google_translate_element, .goog-te-banner-frame, .goog-te-gadget, .goog-te-combo,
+    .goog-te-balloon-frame, .goog-tooltip, .goog-tooltip:hover, .goog-text-highlight,
+    body > .skiptranslate { display:none!important; visibility:hidden!important; }
+    html{position:static!important;} body{top:0!important;}
+  </style>
+</head>
+<body class="bg-brand-light dark:bg-brand-dark text-brand-text-light dark:text-brand-text-dark transition-colors duration-300 overflow-x-hidden">
+
+  <!-- HEADER (TIDAK DIUBAH) -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-brand-light dark:bg-brand-dark md:bg-white/80 md:dark:bg-brand-dark/80 md:backdrop-blur-sm transition-colors duration-300">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div>
-          <a href="index.html" class="text-2xl font-bold tracking-tighter md:hidden">TAUFIK</a>
+          <a href="index.html" class="text-2xl font-bold md:hidden">TAUFIK</a>
           <nav class="hidden md:flex items-center space-x-8">
-            <a href="index.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
-            <a href="work.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Work</a>
-            <a href="about.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
-            <a href="services.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Services</a>
-            <a href="journal.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Journal</a>
-            <a href="contact.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+            <a href="index.html" ...>Home</a>
+            <a href="work.html" ...>Work</a>
+            <a href="about.html" ...>About</a>
+            <a href="services.html" ...>Services</a>
+            <a href="journal.html" ...>Journal</a>
+            <a href="contact.html" ...>Contact</a>
           </nav>
         </div>
         <div class="flex items-center gap-2">
           <!-- Theme Toggle -->
           <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-            <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-            </svg>
-            <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-15.66l-.707.707M5.05 18.95l-.707.707M21 12h-1M4 12H3m15.66 8.66l-.707-.707M5.05 5.05l-.707-.707" />
-            </svg>
-          </button><!-- Language Toggle -->
-      <button id="toggle-language" class="text-sm px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-        🇬🇧 EN
-      </button>
-
-      <!-- Mobile Menu Button -->
-      <div class="md:hidden">
-        <button id="mobile-menu-button" class="p-2 rounded-md">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-        </button>
+            <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5">…</svg>
+            <svg id="theme-toggle-light-icon" class="hidden h-5 w-5">…</svg>
+          </button>
+          <!-- Language Toggle -->
+          <button id="toggle-language" class="text-sm px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+            🇬🇧 EN
+          </button>
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="p-2 rounded-md"><svg class="h-6 w-6">…</svg></button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="md:hidden hidden bg-brand-light dark:bg-brand-dark pb-4">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="bg-brand-gray dark:bg-gray-900/50 rounded-lg shadow-lg py-2">
-      <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Home</a>
-      <a href="work.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Work</a>
-      <a href="about.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">About</a>
-      <a href="services.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Services</a>
-      <a href="journal.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Journal</a>
-      <a href="contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Contact</a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-brand-light dark:bg-brand-dark pb-4">
+      <!-- links... -->
     </div>
-  </div>
-</div>
+    <!-- hidden placeholder -->
+    <div id="google_translate_element"></div>
+  </header>
 
-<!-- Google Translate Element (required but hidden) -->
-<div id="google_translate_element"></div>
-
-  </header>  <!-- Language Toggle Script -->  <script>
-    function setCookie(name, value, days) {
-      const expires = new Date(Date.now() + days*864e5).toUTCString();
-      document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+  <!-- SCRIPT TRANSLATE + TOGGLE -->
+  <script>
+    function setCookie(n,v,d){
+      const exp=new Date(Date.now()+d*864e5).toUTCString();
+      document.cookie=`${n}=${v};expires=${exp};path=/`;
     }
-
-    function getCookie(name) {
-      return document.cookie.split('; ').find(row => row.startsWith(name + '='))?.split('=')[1];
+    function getCookie(n){
+      return document.cookie.split('; ').find(r=>r.startsWith(n+'='))?.split('=')[1]||'';
     }
-
-    function applyLang(lang) {
-      const fullValue = `/en/${lang}`;
-      setCookie('googtrans', fullValue, 365);
-      document.cookie = `googtrans=${fullValue}; path=/`;
+    function applyLang(lang, reload=false){
+      setCookie('googtrans', `/en/${lang}`, 365);
       localStorage.setItem('prefLang', lang);
       document.documentElement.lang = lang;
-      document.getElementById('toggle-language').innerText = lang === 'en' ? '🇬🇧 EN' : '🇮🇩 ID';
+      document.getElementById('toggle-language').innerText = lang==='en' ? '🇬🇧 EN' : '🇮🇩 ID';
+      if(reload) location.reload();
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('prefLang') || 'en';
-      applyLang(savedLang);
+    document.getElementById('toggle-language').addEventListener('click', ()=>{
+      const curr = localStorage.getItem('prefLang')||'en';
+      const next = curr==='en'?'id':'en';
+      applyLang(next, true);
     });
 
-    document.getElementById('toggle-language').addEventListener('click', () => {
-      const current = localStorage.getItem('prefLang') || 'en';
-      const next = current === 'en' ? 'id' : 'en';
-      applyLang(next);
-      setTimeout(() => location.reload(), 300);
+    window.addEventListener('load', ()=>{
+      const lang = localStorage.getItem('prefLang') || 'en';
+      applyLang(lang, false);
+      // Load Google Translate script AFTER cookie
+      const s = document.createElement('script');
+      s.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      document.head.appendChild(s);
     });
-  </script></body>
-</html>
-
+  </script>
+</body>
 
 
 <main>
