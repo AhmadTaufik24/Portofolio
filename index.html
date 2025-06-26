@@ -12,30 +12,56 @@
 
   <!-- Tailwind Config -->
   <script>
-    tailwind.config = { darkMode:'class', theme:{ extend:{ colors:{ 'brand-dark':'#111','brand-light':'#fff','brand-gray':'#f3f4f6','brand-text-dark':'#e5e7eb','brand-text-light':'#1f2937' } } } }
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-dark': '#111',
+            'brand-light': '#fff',
+            'brand-gray': '#f3f4f6',
+            'brand-text-dark': '#e5e7eb',
+            'brand-text-light': '#1f2937'
+          }
+        }
+      }
+    }
   </script>
 
   <!-- Google Translate -->
   <script>
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,id', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,id',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  <!-- Hide translate UI elements -->
+  <!-- Hide Google Translate UI -->
   <style>
-    #google_translate_element, .goog-te-banner-frame, .goog-te-gadget, .goog-te-combo, .goog-te-balloon-frame,
-    .goog-tooltip, .goog-tooltip:hover, .goog-text-highlight, body > .skiptranslate {
-      display:none!important; visibility:hidden!important
+    #google_translate_element,
+    .goog-te-banner-frame,
+    .goog-te-gadget,
+    .goog-te-combo,
+    .goog-te-balloon-frame,
+    .goog-tooltip,
+    .goog-tooltip:hover,
+    .goog-text-highlight,
+    body > .skiptranslate {
+      display: none !important;
+      visibility: hidden !important;
     }
-    html{position:static!important}
-    body{top:0!important}
+    html { position: static !important; }
+    body { top: 0px !important; }
   </style>
 </head>
+
 <body class="bg-brand-light dark:bg-brand-dark text-brand-text-light dark:text-brand-text-dark transition-colors duration-300 overflow-x-hidden">
 
-  <!-- Header (UNTOUCHED) -->
+  <!-- Header -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-brand-light dark:bg-brand-dark md:bg-white/80 md:dark:bg-brand-dark/80 md:backdrop-blur-sm transition-colors duration-300">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
@@ -51,58 +77,94 @@
           </nav>
         </div>
         <div class="flex items-center gap-2">
-          <!-- Theme Toggle (UNCHANGED) -->
+          <!-- Theme Toggle -->
           <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-            <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" ... ></svg>
-            <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" ... ></svg>
+            <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-15.66l-.707.707M5.05 18.95l-.707.707M21 12h-1M4 12H3m15.66 8.66l-.707-.707M5.05 5.05l-.707-.707" />
+            </svg>
           </button>
 
-          <!-- Language Toggle (WORKS NOW) -->
-          <button id="toggle-language" class="text-sm px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">🇬🇧 EN</button>
+          <!-- Language Toggle -->
+          <button id="toggle-language" class="text-sm px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+            🇬🇧 EN
+          </button>
 
-          <!-- Mobile Menu Button (UNCHANGED) -->
-          <div class="md:hidden"><button id="mobile-menu-button" class="p-2 rounded-md"><svg ... ></svg></button></div>
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="p-2 rounded-md">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-brand-light dark:bg-brand-dark pb-4">...</div>
+    <div id="mobile-menu" class="md:hidden hidden bg-brand-light dark:bg-brand-dark pb-4">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-brand-gray dark:bg-gray-900/50 rounded-lg shadow-lg py-2">
+          <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Home</a>
+          <a href="work.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Work</a>
+          <a href="about.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">About</a>
+          <a href="services.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Services</a>
+          <a href="journal.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Journal</a>
+          <a href="contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Contact</a>
+        </div>
+      </div>
+    </div>
 
+    <!-- Google Translate Element (hidden tapi wajib) -->
     <div id="google_translate_element"></div>
   </header>
 
-  <!-- Language & Theme Scripts -->
+  <!-- Language Toggle Script -->
   <script>
     // Helper untuk cookie
-    function setCookie(n,v,d){document.cookie = `${n}=${v};max-age=${60*60*24*d};path=/`}
-    function getCookie(n){return document.cookie.split('; ').find(r=>r.startsWith(n+'='))?.split('=')[1]||''}
-
-    // Clean up spinner/logo left by Google
-    function removeSpinner(){ document.querySelectorAll('iframe.goog-te-banner-frame, img[src*="translate"]').forEach(el=>el.remove()); }
-
-    // Gunakan cookie + localStorage🚀
-    function applyLang(lang){
-      setCookie('googtrans', `/en/${lang}`, 365)
-      localStorage.setItem('prefLang', lang)
-      document.getElementById('toggle-language').innerText = lang === 'en' ? '🇬🇧 EN' : '🇮🇩 ID'
-      setTimeout(removeSpinner, 500)
+    function setCookie(name, value, days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires + ";path=/";
     }
 
-    document.getElementById('toggle-language').onclick = () => {
-      const curr = localStorage.getItem('prefLang')||'en'
-      applyLang(curr === 'en' ? 'id' : 'en')
-      location.reload()
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
     }
 
-    window.onload = () => {
-      const lang = localStorage.getItem('prefLang')||'en'
-      applyLang(lang)
+    function applyLang(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById('toggle-language').innerText = lang === 'en' ? '🇬🇧 EN' : '🇮🇩 ID';
+      localStorage.setItem('prefLang', lang);
+      setCookie('googtrans', `/en/${lang}`, 365);
     }
+
+    document.getElementById('toggle-language').addEventListener('click', () => {
+      const current = localStorage.getItem('prefLang') || 'en';
+      const next = current === 'en' ? 'id' : 'en';
+      applyLang(next);
+      location.reload(); // untuk terapkan translate
+    });
+
+    // On page load
+    window.addEventListener('load', () => {
+      const savedLang = localStorage.getItem('prefLang') || 'en';
+      applyLang(savedLang);
+    });
   </script>
-
 </body>
-</html>
+
 
 
 <main>
