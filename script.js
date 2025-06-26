@@ -107,29 +107,23 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         });
     }
-
-    // --- 6. Logika untuk Accordion Q&A ---
+// Accordion Final Version (tanpa error)
 const qaButtons = document.querySelectorAll('.qa-question-btn');
+const qaPanels = document.querySelectorAll('.qa-answer-panel');
 
-if (qaButtons.length > 0) {
-    qaButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all buttons
-            qaButtons.forEach(b => b.classList.remove('qa-question-active'));
+if (qaButtons.length > 0 && qaPanels.length > 0) {
+    qaButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
 
-            // Hide all answers
-            const allAnswers = document.querySelectorAll('.qa-answer-panel');
-            allAnswers.forEach(ans => ans.classList.add('hidden'));
+            // Reset semua tombol dan panel
+            qaButtons.forEach(btn => btn.classList.remove('qa-question-active'));
+            qaPanels.forEach(panel => panel.classList.add('hidden'));
 
-            // Add active class to clicked button
-            btn.classList.add('qa-question-active');
-
-            // Show corresponding answer
-            const targetId = btn.getAttribute('data-target');
-            const answerEl = document.querySelector(targetId);
-            if (answerEl) {
-                answerEl.classList.remove('hidden');
-            }
+            // Aktifkan tombol dan panel yang sesuai
+            button.classList.add('qa-question-active');
+            const targetPanel = document.querySelector(targetId);
+            if (targetPanel) targetPanel.classList.remove('hidden');
         });
     });
 }
