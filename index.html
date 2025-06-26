@@ -2,23 +2,15 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <!-- Batasi zoom di mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taufik - Digital Experience Designer</title>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Tailwind Custom Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -37,53 +29,55 @@
   </script>
 </head>
 
+<body class="bg-brand-light dark:bg-brand-dark text-brand-text-light dark:text-brand-text-dark transition-colors duration-300 overflow-x-hidden">
 
-<body class="bg-brand-light dark:bg-brand-dark text-brand-text-light dark:text-brand-text-dark transition-colors duration-300">
-
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-brand-light dark:bg-brand-dark md:bg-white/80 md:dark:bg-brand-dark/80 md:backdrop-blur-sm transition-colors duration-300">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-            <div>
-                <a href="#home" class="text-2xl font-bold tracking-tighter md:hidden">TAUFIK</a>
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
-                    <a href="#work" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Work</a>
-                    <a href="#about" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">About</a>
-                    <a href="#services" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Services</a>
-                    <a href="#testimonials" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Testimonials</a>
-                    <a href="#journal" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Journal</a>
-                    <a href="#faq" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Q&A</a>
-                    <a href="#contact" class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
-                </nav>
-            </div>
-            <div class="flex items-center">
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                    <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                    <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-15.66l-.707.707M5.05 18.95l-.707.707M21 12h-1M4 12H3m15.66 8.66l-.707-.707M5.05 5.05l-.707-.707"></path></svg>
-                </button>
-                <div class="md:hidden ml-2">
-                    <button id="mobile-menu-button" class="p-2 rounded-md">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    </button>
-                </div>
-            </div>
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-brand-light dark:bg-brand-dark md:bg-white/80 md:dark:bg-brand-dark/80 md:backdrop-blur-sm transition-colors duration-300">
+    <div class="container max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div>
+          <a href="index.html" class="text-2xl font-bold tracking-tighter md:hidden">TAUFIK</a>
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+            <a href="work.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Work</a>
+            <a href="about.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+            <a href="services.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Services</a>
+            <a href="journal.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Journal</a>
+            <a href="contact.html" class="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+          </nav>
         </div>
+        <div class="flex items-center">
+          <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-15.66l-.707.707M5.05 18.95l-.707.707M21 12h-1M4 12H3m15.66 8.66l-.707-.707M5.05 5.05l-.707-.707" />
+            </svg>
+          </button>
+          <div class="md:hidden ml-2">
+            <button id="mobile-menu-button" class="p-2 rounded-md">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+
     <div id="mobile-menu" class="md:hidden hidden bg-brand-light dark:bg-brand-dark pb-4">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-2">
-            <div class="bg-brand-gray dark:bg-gray-900/50 rounded-lg shadow-lg py-2">
-                 <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md">Home</a>
-                 <a href="#work" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md">Work</a>
-                 <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md">About</a>
-                 <a href="#services" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md">Services</a>
-                 <a href="#testimonials" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md">Testimonials</a>
-                 <a href="#journal" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md">Journal</a>
-                 <a href="#faq" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md">Q&A</a>
-                 <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md">Contact</a>
-            </div>
+      <div class="container max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-brand-gray dark:bg-gray-900/50 rounded-lg shadow-lg py-2">
+          <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Home</a>
+          <a href="work.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Work</a>
+          <a href="about.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">About</a>
+          <a href="services.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Services</a>
+          <a href="journal.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Journal</a>
+          <a href="contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Contact</a>
         </div>
+      </div>
     </div>
-</header> 
+  </header>
 
 <main>
    <!-- SECTION HOME -->
