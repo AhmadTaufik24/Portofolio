@@ -1,5 +1,6 @@
 /* =================================================================
-   KODE JAVASCRIPT FINAL - SEMUA FITUR TERMASUK Q&A
+   KODE JAVASCRIPT LENGKAP - FINAL
+   (Semua Fitur dengan Logika Tema yang Diperbarui)
 ================================================================= */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -24,22 +25,29 @@ document.addEventListener('DOMContentLoaded', function() {
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
         
+        // Cek tema yang tersimpan di localStorage
         const savedTheme = localStorage.getItem('color-theme');
 
+        // LOGIKA BARU:
         if (savedTheme === 'dark') {
+            // Jika tersimpan 'dark', langsung terapkan dark mode
             document.documentElement.classList.add('dark');
             if(themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
             if(themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');
         } else {
+            // Jika tidak ada yang tersimpan (kunjungan pertama) atau tersimpan 'light',
+            // maka terapkan light mode.
             document.documentElement.classList.remove('dark');
             if(themeToggleDarkIcon) themeToggleDarkIcon.classList.remove('hidden');
             if(themeToggleLightIcon) themeToggleLightIcon.classList.add('hidden');
         }
 
+        // Event listener untuk tombol ganti tema tetap sama
         themeToggleBtn.addEventListener('click', function() {
             if(themeToggleDarkIcon) themeToggleDarkIcon.classList.toggle('hidden');
             if(themeToggleLightIcon) themeToggleLightIcon.classList.toggle('hidden');
             
+            // Toggle kelas 'dark' dan simpan pilihan terbaru ke localStorage
             const isDark = document.documentElement.classList.toggle('dark');
             localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
         });
@@ -133,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         backToTopBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+            e.preventDefault(); // Perbaikan: tambahkan 'e' sebagai parameter
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
