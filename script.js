@@ -107,25 +107,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // --- 6. Accordion FAQ ---
-  const faqToggles = document.querySelectorAll('.faq-toggle');
-  faqToggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      const content = toggle.nextElementSibling;
-      const icon = toggle.querySelector('.faq-icon');
+  // --- Accordion FAQ ---
+const qaButtons = document.querySelectorAll('.qa-question-btn');
+const qaPanels = document.querySelectorAll('.qa-answer-panel');
 
-      // Tutup semua panel
-      faqToggles.forEach(btn => {
-        btn.nextElementSibling.classList.add('hidden');
-        btn.querySelector('.faq-icon').classList.remove('rotate-180');
+if (qaButtons.length > 0 && qaPanels.length > 0) {
+  qaButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-target');
+      const targetPanel = document.querySelector(targetId);
+
+      // Reset semua tombol & panel
+      qaButtons.forEach(btn => {
+        btn.classList.remove('qa-question-active');
+        const icon = btn.querySelector('.faq-icon');
+        if (icon) icon.classList.remove('rotate-180');
       });
 
-      // Buka panel yang diklik
-      if (content.classList.contains('hidden')) {
-        content.classList.remove('hidden');
-        icon.classList.add('rotate-180');
-      }
+      qaPanels.forEach(panel => panel.classList.add('hidden'));
+
+      // Aktifkan yang diklik
+      button.classList.add('qa-question-active');
+      if (targetPanel) targetPanel.classList.remove('hidden');
+
+      const selectedIcon = button.querySelector('.faq-icon');
+      if (selectedIcon) selectedIcon.classList.add('rotate-180');
     });
   });
-
-});
+}
