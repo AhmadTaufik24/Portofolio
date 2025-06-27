@@ -37,4 +37,4 @@ body {
 .qa-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; }
 .qa-answer.open { max-height: 300px; }
 .qa-icon { transition: transform 0.3s ease-in-out; }
-.qa-item.active .qa-icon { transform: rotate(180deg); }
+.qa-item.active .qa-icon { transform: rotate(180deg); } 
