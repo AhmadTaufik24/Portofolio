@@ -1,173 +1,325 @@
 /* =================================================================
-   KODE CSS LENGKAP - FINAL & BENAR (SEMUA FITUR)
+
+KODE CSS LENGKAP - FINAL & BENAR (SEMUA FITUR)
+
 ================================================================= */
 
 /* ====== 1. Gaya Dasar & Font ====== */
-body {
-    font-family: 'Inter', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+
+html, body {
+overflow-x: hidden;
+
+font-family: 'Inter', sans-serif;
+
+-webkit-font-smoothing: antialiased;
+
+-moz-osx-font-smoothing: grayscale;
+
 }
 
 /* ====== 2. Pustaka Animasi Scroll (Lengkap) ====== */
+
 .animasi {
-    opacity: 0;
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+opacity: 0;
+
+transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
 }
+
 .animasi.aktif {
-    opacity: 1;
-    transform: none;
+
+opacity: 1;
+
+transform: none;
+
 }
+
 .animasi-fade-up { transform: translateY(30px); }
+
 .animasi-fade-left { transform: translateX(-50px); }
+
 .animasi-fade-right { transform: translateX(50px); }
+
 .animasi-zoom-in { transform: scale(0.9); }
+
 .animasi-flip-in { transform: perspective(1000px) rotateX(-45deg); }
 
-
 /* ====== 3. Gaya Navbar Aktif ====== */
+
 .navbar-aktif {
-    font-weight: 700;
-    color: #2563eb;
+
+font-weight: 700;
+
+color: #2563eb;
+
 }
+
 .dark .navbar-aktif {
-    color: #60a5fa;
+
+color: #60a5fa;
+
 }
 
 /* ====== 4. Gaya Slider Testimoni (Interaktif) ====== */
+
 .testimonial-slider .swiper-slide {
-    width: 90%;
-    max-width: 380px;
-    height: auto; /* Biarkan tinggi menyesuaikan konten */
-    padding-bottom: 1rem; /* Beri ruang di bawah */
+
+width: 90%;
+
+max-width: 380px;
+
+height: auto; /* Biarkan tinggi menyesuaikan konten */
+
+padding-bottom: 1rem; /* Beri ruang di bawah */
+
 }
+
 .testimonial-card {
-    position: relative;
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 2rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.4s ease-in-out;
+
+position: relative;
+
+background-color: white;
+
+border-radius: 0.5rem;
+
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+padding: 2rem;
+
+height: 100%;
+
+display: flex;
+
+flex-direction: column;
+
+transition: all 0.4s ease-in-out;
+
 }
+
 .dark .testimonial-card {
-    background-color: #1f2937;
+
+background-color: #1f2937;
+
 }
+
 .testimonial-card .quote {
-    flex-grow: 1;
-    color: #4b5563;
+
+flex-grow: 1;
+
+color: #4b5563;
+
 }
+
 .dark .testimonial-card .quote {
-    color: #d1d5db;
+
+color: #d1d5db;
+
 }
+
 .testimonial-card .author-info {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #e5e7eb;
+
+margin-top: 1.5rem;
+
+padding-top: 1.5rem;
+
+border-top: 1px solid #e5e7eb;
+
 }
+
 .dark .testimonial-card .author-info {
-    border-color: #374151;
+
+border-color: #374151;
+
 }
 
 /* Efek Gradasi untuk slide yang TIDAK di-hover dalam group */
+
 .group:hover .testimonial-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 0.5rem;
-    background: linear-gradient(to top, rgba(37, 99, 235, 0.9), rgba(255, 255, 255, 0.1));
-    opacity: 1;
-    transition: opacity 0.3s;
-    pointer-events: none;
+
+content: '';
+
+position: absolute;
+
+inset: 0;
+
+border-radius: 0.5rem;
+
+background: linear-gradient(to top, rgba(37, 99, 235, 0.9), rgba(255, 255, 255, 0.1));
+
+opacity: 1;
+
+transition: opacity 0.3s;
+
+pointer-events: none;
+
 }
+
 /* Meredupkan konten kartu yang tidak aktif */
+
 .group:hover .card-content {
-    opacity: 0.2;
-    filter: blur(1px);
-    transform: scale(0.98);
+
+opacity: 0.2;
+
+filter: blur(1px);
+
+transform: scale(0.98);
+
 }
+
 /* Kembalikan kartu yang di-hover menjadi jelas & membesar */
+
 .group .testimonial-card:hover {
-    transform: scale(1.05);
-    z-index: 10;
-    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+transform: scale(1.05);
+
+z-index: 10;
+
+box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
 }
+
 .group .testimonial-card:hover .card-content {
-    opacity: 1;
-    filter: blur(0px);
-    transform: scale(1);
+
+opacity: 1;
+
+filter: blur(0px);
+
+transform: scale(1);
+
 }
+
 .group .testimonial-card:hover::after {
-    opacity: 0;
+
+opacity: 0;
+
 }
+
 /* Navigasi Testimoni */
+
 .testimonial-prev, .testimonial-next {
-    color: #2563eb;
+
+color: #2563eb;
+
 }
+
 .dark .testimonial-prev, .dark .testimonial-next {
-    color: #60a5fa;
+
+color: #60a5fa;
+
 }
 
 /* ====== 5. Gaya Daftar Jurnal Interaktif ====== */
+
 .journal-list-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 1.5rem 1rem;
-    border-bottom: 1px solid #e5e7eb;
-    overflow: hidden;
-    transition: color 0.3s ease-in-out;
+
+position: relative;
+
+display: flex;
+
+align-items: center;
+
+padding: 1.5rem 1rem;
+
+border-bottom: 1px solid #e5e7eb;
+
+overflow: hidden;
+
+transition: color 0.3s ease-in-out;
+
 }
+
 .dark .journal-list-item {
-    border-color: #374151;
+
+border-color: #374151;
+
 }
+
 /* Lapisan Highlight yang Meluncur */
+
 .journal-list-item::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    background-color: #f3f4f6;
-    transform: translateX(-101%);
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+content: '';
+
+position: absolute;
+
+z-index: -1;
+
+inset: 0;
+
+background-color: #f3f4f6;
+
+transform: translateX(-101%);
+
+transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
 }
+
 .dark .journal-list-item::before {
-    background-color: #1f2937;
+
+background-color: #1f2937;
+
 }
+
 .journal-list-item:hover::before {
-    transform: translateX(0);
+
+transform: translateX(0);
+
 }
+
 /* Gaya Judul, Nomor, dan Panah Jurnal */
+
 .journal-list-number { font-size: 1.5rem; font-weight: 700; color: #d1d5db; margin-right: 1.5rem; }
+
 .dark .journal-list-number { color: #4b5563; }
+
 .journal-list-title { font-weight: 600; flex-grow: 1; transition: color 0.3s; }
+
 .journal-list-item:hover .journal-list-title { color: #2563eb; }
+
 .dark .journal-list-item:hover .journal-list-title { color: #60a5fa; }
+
 .journal-list-arrow { font-size: 1.5rem; color: #9ca3af; opacity: 0; transform: translateX(-10px); transition: all 0.3s ease-in-out; }
+
 .dark .journal-list-arrow { color: #6b7280; }
+
 .journal-list-item:hover .journal-list-arrow { opacity: 1; transform: translateX(0); }
 
-
 /* ====== 6. Gaya Accordion Q&A ====== */
+
 .qa-question-btn { width: 100%; font-weight: 600; color: #4b5563; background-color: transparent; transition: all 0.2s ease-in-out; }
+
 .dark .qa-question-btn { color: #d1d5db; }
+
 .qa-question-btn:hover { background-color: #f3f4f6; color: #1f2937; }
+
 .dark .qa-question-btn:hover { background-color: rgba(55, 65, 81, 0.5); color: #f9fafb; }
+
 .qa-question-active { background-color: #2563eb !important; color: white !important; }
+
 .dark .qa-question-active { background-color: #60a5fa !important; color: #111111 !important; }
+
 .qa-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; }
+
 .qa-answer.open { max-height: 300px; }
+
 .qa-icon { transition: transform 0.3s ease-in-out; }
+
 .qa-item.active .qa-icon { transform: rotate(180deg); }
 
 /* --- Gaya Kursor untuk Efek Ketikan --- */
+
 .cursor {
-    animation: blink-caret .75s step-end infinite;
+
+animation: blink-caret .75s step-end infinite;
+
 }
 
 @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: currentColor }
+
+from, to { border-color: transparent }
+
+50% { border-color: currentColor }
+
 }
+
