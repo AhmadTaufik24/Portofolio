@@ -463,64 +463,72 @@
 </section>
 
 <section id="faq" class="py-20 sm:py-32 bg-brand-gray dark:bg-gray-900/50">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-    <div class="animasi animasi-zoom-in text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Frequently Asked Questions</h2>
-      <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
-        Beberapa pertanyaan yang sering ditanyakan oleh klien.
-      </p>
-    </div>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="animasi animasi-zoom-in">
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Frequently Asked Questions</h2>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+          Beberapa pertanyaan yang sering ditanyakan oleh klien.
+        </p>
+      </div>
 
-    <div class="space-y-4">
-      <!-- Item 1 -->
-      <div class="faq-item border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-        <button class="faq-toggle w-full flex justify-between items-center p-4 text-left">
-          <span class="font-medium text-lg">Apa saja layanan utama yang Anda tawarkan?</span>
-          <svg class="faq-icon w-5 h-5 transition-transform duration-300 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div class="faq-content hidden px-4 pb-4 text-gray-600 dark:text-gray-400">
-          Saya menawarkan layanan seperti Branding, UI/UX Design, Illustration, dan Creative Strategy untuk brand dan produk.
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+        <div class="lg:col-span-1">
+          <div id="qa-questions-container" class="flex flex-col">
+            <button class="qa-question-btn qa-question-active flex items-center justify-between w-full text-left p-4 border-b border-gray-200 dark:border-gray-700" data-target="#answer-1">
+              <span>Apa saja layanan utama yang Anda tawarkan?</span>
+              <svg class="faq-icon w-5 h-5 transition-transform duration-300 rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <button class="qa-question-btn flex items-center justify-between w-full text-left p-4 border-b border-gray-200 dark:border-gray-700" data-target="#answer-2">
+              <span>Bagaimana proses kerja Anda?</span>
+              <svg class="faq-icon w-5 h-5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <button class="qa-question-btn flex items-center justify-between w-full text-left p-4 border-b border-gray-200 dark:border-gray-700" data-target="#answer-3">
+              <span>Berapa lama waktu pengerjaan proyek?</span>
+              <svg class="faq-icon w-5 h-5 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div id="qa-answers-container">
+            <div id="answer-1" class="qa-answer-panel">
+              <h3 class="text-xl font-bold mb-3">Layanan Utama Saya</h3>
+              <p class="text-gray-600 dark:text-gray-400">
+                Saya menawarkan empat layanan utama: Branding, UI/UX Design, Illustration, dan Creative Strategy.
+              </p>
+            </div>
+            <div id="answer-2" class="qa-answer-panel hidden">
+              <h3 class="text-xl font-bold mb-3">Proses Kerja Saya</h3>
+              <p class="text-gray-600 dark:text-gray-400">
+                Proses saya selalu dimulai dengan riset mendalam untuk memahami audiens dan tujuan bisnis Anda. Lanjut ke tahap strategi, wireframing, desain visual, hingga prototyping.
+              </p>
+            </div>
+            <div id="answer-3" class="qa-answer-panel hidden">
+              <h3 class="text-xl font-bold mb-3">Estimasi Waktu Proyek</h3>
+              <p class="text-gray-600 dark:text-gray-400">
+                Waktu pengerjaan bervariasi tergantung skala proyek. Desain logo bisa 1-2 minggu, UI/UX aplikasi bisa 1-3 bulan.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Item 2 -->
-      <div class="faq-item border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-        <button class="faq-toggle w-full flex justify-between items-center p-4 text-left">
-          <span class="font-medium text-lg">Bagaimana proses kerja Anda?</span>
-          <svg class="faq-icon w-5 h-5 transition-transform duration-300 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div class="faq-content hidden px-4 pb-4 text-gray-600 dark:text-gray-400">
-          Proses dimulai dari riset → strategi → wireframe → desain visual → prototyping.
-        </div>
+      <div class="text-center mt-16 pt-10 border-t border-gray-300 dark:border-gray-700 max-w-2xl mx-auto">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Belum Menemukan Jawaban?</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-400">
+          Jika Anda tidak menemukan apa yang Anda cari, jangan ragu untuk menghubungi saya langsung.
+        </p>
+        <a href="#contact" class="inline-block mt-6 bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition-all duration-300">
+          Hubungi Saya
+        </a>
       </div>
-
-      <!-- Item 3 -->
-      <div class="faq-item border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-        <button class="faq-toggle w-full flex justify-between items-center p-4 text-left">
-          <span class="font-medium text-lg">Berapa lama waktu pengerjaan proyek?</span>
-          <svg class="faq-icon w-5 h-5 transition-transform duration-300 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div class="faq-content hidden px-4 pb-4 text-gray-600 dark:text-gray-400">
-          Waktu pengerjaan tergantung skala proyek, dari 1–2 minggu untuk logo hingga 1–3 bulan untuk UI/UX app.
-        </div>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <div class="text-center mt-16 pt-10 border-t border-gray-300 dark:border-gray-700 max-w-2xl mx-auto">
-      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Belum Menemukan Jawaban?</h3>
-      <p class="mt-2 text-gray-600 dark:text-gray-400">
-        Jika Anda tidak menemukan apa yang Anda cari, jangan ragu untuk menghubungi saya secara langsung.
-      </p>
-      <a href="#contact" class="inline-block mt-6 bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition-all duration-300">
-        Hubungi Saya
-      </a>
     </div>
   </div>
 </section>
