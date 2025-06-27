@@ -1,12 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- 1. Dark Mode Toggle (Logika Final: Kunjungan pertama Light) ---
+    // --- Mobile Menu Toggle ---
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    // --- Dark Mode Toggle ---
     const themeToggleBtn = document.getElementById('theme-toggle');
     if (themeToggleBtn) {
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        
+        // Logika tema: Kunjungan pertama Light, lalu mengingat pilihan
         const savedTheme = localStorage.getItem('color-theme');
-
         if (savedTheme === 'dark') {
             document.documentElement.classList.add('dark');
             if(themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
@@ -25,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 2. Navbar Aktif Saat Scroll ---
+    // --- Navbar Aktif Saat Scroll ---
     const navLinks = document.querySelectorAll('header nav a[href^="#"]');
     const sections = document.querySelectorAll('main section[id]');
     if (navLinks.length > 0 && sections.length > 0) {
@@ -42,32 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }, { rootMargin: "-40% 0px -60% 0px" });
-        sections.forEach(section => { observerNavbar.observe(section); });
-    }
-
-    // --- 3. Slideshow Foto Profil (BARU) ---
-    const profilePhoto = document.getElementById('profile-photo');
-    if (profilePhoto) {
-        const images = [
-            'https://i.ibb.co/6nZtWd3/profile-pic-1.png', // <-- Ganti dengan link foto Anda nanti
-            'https://i.ibb.co/StC75sW/profile-pic-2.png'  // <-- Ganti dengan link foto Anda nanti
-            // Anda bisa menambah lebih banyak link di sini, contoh: ,'link_foto_3.png'
-        ];
-        let currentIndex = 0;
-
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % images.length; // Ganti ke foto selanjutnya
-            
-            // Efek fade out
-            profilePhoto.style.opacity = 0; 
-            
-            // Tunggu fade out selesai, baru ganti gambar dan fade in
-            setTimeout(() => {
-                profilePhoto.src = images[currentIndex];
-                profilePhoto.style.opacity = 1;
-            }, 500); // 500ms = durasi transisi di CSS
-
-        }, 4000); // Ganti foto setiap 4 detik
+        sections.forEach(section => {
+            observerNavbar.observe(section);
+        });
     }
 
 });
